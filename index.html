@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SC Survey & Construction Co., Ltd. งานสำรวจและงานก่อสร้าง">
+<title>SC Survey & Construction Co., Ltd.</title>
+<link rel="icon" href="logo.jpg">
+
+<style>
+:root {
+  --green: #153f38;
+  --gold: #dcae4e;
+  --light: #f5f5f2;
+  --white: #ffffff;
+  --dark: #172b38;
+  --gray: #64747d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Leelawadee UI", Tahoma, sans-serif;
+  background: var(--light);
+  color: var(--dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1160px, calc(100% - 44px));
+  margin: auto;
+}
+
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--green);
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.nav {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  background: #fff;
+  padding: 3px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+
+.brand strong {
+  display: block;
+  color: white;
+  font-size: 15px;
+}
+
+.brand small {
+  color: #d5e1dc;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .2s;
+  padding: 5px 0;
+}
+
+nav button:hover, nav button.active {
+  color: var(--gold);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 20px;
+  border-radius: 9px;
+  background: var(--gold);
+  color: var(--dark);
+  font-weight: bold;
+  transition: .2s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* PAGE SYSTEM */
+.page-section {
+  display: none;
+}
+.page-section.active {
+  display: block;
+}
+
+/* HERO */
+.hero {
+  color: white;
+  overflow: hidden;
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(21,63,56,0.95) 0%, rgba(21,63,56,0.5) 60%),
+    url("hero.jpg") center / cover no-repeat;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  min-height: 535px;
+  display: grid;
+  grid-template-columns: minmax(0, 540px);
+  align-items: center;
+  padding: 65px 0;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: clamp(36px, 5vw, 62px);
+  line-height: 1.2;
+  margin: 18px 0;
+}
+
+h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  color: #d8e4eb;
+  line-height: 1.9;
+  max-width: 540px;
+  margin-bottom: 28px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 20px;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 9px;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* STATS */
+.stats {
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  padding: 25px 0;
+}
+
+.stat {
+  text-align: center;
+  border-right: 1px solid #ddd;
+  padding: 8px;
+}
+
+.stat:last-child {
+  border: none;
+}
+
+.stat b {
+  display: block;
+  color: var(--green);
+}
+
+.stat span {
+  color: var(--gray);
+  font-size: 12px;
+}
+
+/* SECTION CONFIDENCE (สไตล์ตามรูปตัวอย่าง) */
+.confidence-section {
+  background: #172b38;
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.confidence-section h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  margin-bottom: 50px;
+  color: white;
+}
+
+.confidence-grid {
+  max-width: 850px;
+  margin: auto;
+  display: grid;
+  gap: 20px;
+  text-align: left;
+}
+
+.confidence-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 25px 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: 0.3s;
+}
+
+.confidence-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--gold);
+}
+
+.confidence-num {
+  background: var(--gold);
+  color: var(--dark);
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.confidence-content h3 {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.confidence-content p {
+  font-size: 14px;
+  color: #b0c4de;
+  line-height: 1.7;
+}
+
+.confidence-content a {
+  color: var(--gold);
+  text-decoration: underline;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+/* SUB-NAV BAR (สำหรับหมวดหมู่ย่อยผลงาน) */
+.sub-nav-bar {
+  background: var(--dark);
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.sub-nav-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  max-width: 1160px;
+  margin: auto;
+  padding: 0 22px;
+}
+
+.filter-btn {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: inherit;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: var(--gold);
+  color: var(--dark);
+  font-weight: bold;
+}
+
+/* PORTFOLIO GALLERY GRID */
+.gallery-section {
+  padding: 50px 0;
+  background: var(--dark);
+  min-height: 80vh;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1160px;
+  margin: auto;
+}
+
+.gallery-item {
+  background: #223848;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.gallery-img-box {
+  height: 220px;
+  background: #10202b;
+  position: relative;
+  overflow: hidden; /* เพิ่มบรรทัดนี้เพื่อซ่อนส่วนที่เกิน */
+}
+
+.gallery-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* บังคับให้รูปเต็มกรอบพอดี ไม่ล้น */
+
+}
+
+.gallery-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 11px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.gallery-content {
+  padding: 18px;
+  color: white;
+}
+
+.gallery-content h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--gold);
+}
+
+.gallery-content p {
+  font-size: 12px;
+  color: #b0c4de;
+  line-height: 1.6;
+}
+
+/* GENERAL SECTION */
+section {
+  padding: 82px 0;
+}
+
+.section-head {
+  max-width: 760px;
+  margin-bottom: 38px;
+}
+
+.section-head h2,
+.about-copy h2 {
+  font-size: 34px;
+  color: var(--green);
+  margin: 12px 0;
+}
+
+.section-head p,
+.about-copy p {
+  color: var(--gray);
+  line-height: 1.9;
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-visual {
+  min-height: 340px;
+  background: #fff;
+  border: 1px solid #e0e5e2;
+  box-shadow: 0 15px 30px rgba(20,50,65,.08);
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.about-visual img {
+  width: 80%;
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.checks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 24px;
+}
+
+.check {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.check i {
+  display: inline-grid;
+  place-items: center;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: #f5e8c9;
+  color: #a87519;
+  font-style: normal;
+  margin-right: 7px;
+}
+
+/* SERVICES */
+.services {
+  background: #eaf0ed;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: white;
+  padding: 35px 30px;
+  border-radius: 20px;
+  border: 1px solid #e0e5e2;
+  box-shadow: 0 10px 30px rgba(20,50,65,.04);
+  transition: .3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(20,50,65,.1);
+}
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  background: #f5e8c9;
+  color: #a87519;
+  border-radius: 14px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.service-card h3 {
+  color: var(--green);
+  font-size: 18px;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.service-card p {
+  color: var(--gray);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.deliverables-card {
+  grid-column: 1 / -1;
+  background: #ffffff;
+  border: 2px dashed var(--gold);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(20,50,65,.04);
+}
+
+.deliverables-card h3 {
+  color: var(--green);
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.deliverables-card p {
+  color: var(--dark);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* PROCESS */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 18px;
+}
+
+.process {
+  background: white;
+  border-top: 3px solid var(--gold);
+  padding: 22px 18px;
+  border-radius: 0 0 12px 12px;
+}
+
+.process span {
+  color: #b17d20;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.process b {
+  display: block;
+  color: var(--green);
+  margin: 12px 0 8px;
+}
+
+.process p {
+  color: var(--gray);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* CONTACT */
+.contact {
+  background: var(--green);
+  color: white;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.contact h2 {
+  font-size: 36px;
+  margin: 12px 0;
+}
+
+.contact p {
+  color: #d5e0e6;
+  line-height: 1.9;
+}
+
+.contact-list {
+  display: grid;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 14px;
+}
+
+.contact-item span {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.12);
+  border-radius: 10px;
+}
+
+.contact-panel {
+  background: white;
+  color: var(--dark);
+  padding: 30px;
+  border-radius: 18px;
+}
+
+.contact-panel h3 {
+  color: var(--green);
+  margin-bottom: 12px;
+}
+
+.contact-panel p {
+  color: var(--gray);
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.note {
+  font-size: 11px;
+  color: var(--gray);
+  margin-top: 18px;
+}
+
+/* FOOTER */
+footer {
+  background: #102c40;
+  color: #c6d4dc;
+  padding: 25px 0;
+  font-size: 12px;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  nav {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: var(--green);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .hero::before {
+    width: 100%;
+    clip-path: none;
+    opacity: .3;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+  .stats-grid,
+  .service-grid,
+  .process-grid,
+  .checks,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container nav">
+    <div class="brand" onclick="switchPage('home')">
+      <img class="logo" src="logo.jpg" alt="โลโก้ SC Survey">
+      <div>
+        <strong>SC SURVEY & CONSTRUCTION</strong>
+        <small>CO., LTD.</small>
+      </div>
+    </div>
+
+    <nav id="mainNav">
+      <button onclick="switchPage('home')" class="active">หน้าแรก</button>
+      <button onclick="switchPage('portfolio')">ผลงานภาพรวม</button>
+      <button onclick="switchPage('services')">บริการของเรา</button>
+      <button onclick="switchPage('process')">ขั้นตอนการทำงาน</button>
+      <button onclick="switchPage('contact')">ติดต่อเรา</button>
+    </nav>
+
+    <button class="btn nav-cta" onclick="switchPage('contact')">ติดต่อบริษัท ↗</button>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-label="เมนู">☰</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1. หน้าแรก (Home) -->
+  <div id="page-home" class="page-section active">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">PRECISION · PROFESSIONAL · TRUST</div>
+          <h1>
+            สำรวจอย่างแม่นยำ<br>
+            <span>ก่อสร้างอย่างมั่นใจ</span>
+          </h1>
+          <p>
+            SC Survey & Construction Co., Ltd. มุ่งมั่นให้บริการด้านงานสำรวจและงานก่อสร้าง
+            ด้วยความใส่ใจในรายละเอียดและมาตรฐานการทำงาน
+          </p>
+          <div class="hero-actions">
+            <button class="btn" onclick="switchPage('portfolio')">ดูผลงานหน้างาน →</button>
+            <button class="btn-outline" onclick="switchPage('services')">บริการทั้งหมด</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="container stats-grid">
+        <div class="stat">
+          <b>SC SURVEY</b>
+          <span>Survey & Construction</span>
+        </div>
+        <div class="stat">
+          <b>FIELD WORK</b>
+          <span>ใส่ใจในรายละเอียดหน้างาน</span>
+        </div>
+        <div class="stat">
+          <b>PROFESSIONAL</b>
+          <span>ทำงานอย่างเป็นระบบ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- มั่นใจได้ทุกขั้นตอน (Confidence Section ตามแบบตัวอย่าง) -->
+    <section class="confidence-section">
+      <div class="container">
+        <h2>มั่นใจได้ทุกขั้นตอน</h2>
+        <div class="confidence-grid">
+          
+          <div class="confidence-card">
+            <div class="confidence-num">1</div>
+            <div class="confidence-content">
+              <h3>รับรองโดยวิศวกร</h3>
+              <p>รายงานผลสำรวจและแบบทุกฉบับมีความถูกต้องตามหลักวิศวกรรม สามารถนำไปใช้ประกอบการดำเนินงานหรือยื่นขออนุญาตได้ทันที</p>
+            </div>
+          </div>
+
+          <div class="confidence-card">
+            <div class="confidence-num">2</div>
+            <div class="confidence-content">
+              <h3>ทีมงานประสบการณ์สูง</h3>
+              <p>ผ่านโครงการมาแล้วหลากหลายรูปแบบ ทั้งงานอาคาร โรงงาน คลังสินค้า และโครงสร้างพื้นฐาน <a href="#" onclick="switchPage('portfolio'); return false;">ดูผลงานของเรา →</a></p>
+            </div>
+          </div>
+
+          <div class="confidence-card">
+            <div class="confidence-num">3</div>
+            <div class="confidence-content">
+              <h3>รับงานทั่วประเทศ</h3>
+              <p>มีความพร้อมด้านทีมงานภาคสนามและเครื่องมือสำรวจทันสมัย พร้อมเดินทางปฏิบัติงานทุกจังหวัดทั่วประเทศไทย</p>
+            </div>
+          </div>
+
+          <div class="confidence-card">
+            <div class="confidence-num">4</div>
+            <div class="confidence-content">
+              <h3>มาตรฐานสากลและข้อกำหนดที่เกี่ยวข้อง</h3>
+              <p>กระบวนการปฏิบัติงานและการตรวจสอบดำเนินการตามมาตรฐานสากลและระเบียบข้อบังคับที่เกี่ยวข้องในแต่ละประเภทงานอย่างเคร่งครัด</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 2. หน้าผลงาน (Portfolio Gallery) -->
+  <div id="page-portfolio" class="page-section">
+    <div class="sub-nav-bar">
+      <div class="sub-nav-container">
+        <button class="filter-btn active" onclick="filterGallery('all', event)">ทั้งหมด</button>
+        <button class="filter-btn" onclick="filterGallery('land', event)">ภาคพื้นดิน</button>
+        <button class="filter-btn" onclick="filterGallery('drone', event)">Drone & LiDAR</button>
+        <button class="filter-btn" onclick="filterGallery('water', event)">ท้องน้ำ</button>
+        <button class="filter-btn" onclick="filterGallery('volume', event)">ปริมาณดิน</button>
+        <button class="filter-btn" onclick="filterGallery('pile', event)">ตามโครงการ</button>
+      </div>
+    </div>
+
+    <div class="gallery-section">
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item" data-category="land">
+          <div class="gallery-img-box">
+            <img src="work1.jpg" alt="ทีมสำรวจ GPS RTK">
+            <div class="gallery-badge">GPS RTK</div>
+          </div>
+          <div class="gallery-content">
+            <h3>ทีมสำรวจ GPS RTK เก็บพิกัดหน้างานจริง</h3>
+            <p>การกำหนดหมุดควบคุมและตรวจสอบค่าพิกัดความละเอียดสูงหน้างานก่อสร้าง</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="drone">
+          <div class="gallery-img-box">
+            <span>[ใส่รูปโดรนที่นี่]</span>
+            <div class="gallery-badge">UAV Drone</div>
+          </div>
+          <div class="gallery-content">
+            <h3>สำรวจทางอากาศด้วยโดรนสำรวจ</h3>
+            <p>จัดทำแผนที่ Orthophoto และแบบจำลองภูมิประเทศ 3 มิติ</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="water">
+          <div class="gallery-img-box">
+            <span>[ใส่รูปลงเรือที่นี่]</span>
+            <div class="gallery-badge">Hydrographic</div>
+          </div>
+          <div class="gallery-content">
+            <h3>สำรวจภูมิประเทศใต้น้ำ</h3>
+            <p>ตรวจวัดระดับท้องน้ำและความลึกคลองหรืออ่างเก็บน้ำ</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="volume">
+          <div class="gallery-img-box">
+            <span>[ใส่รูปพื้นที่ดินที่นี่]</span>
+            <div class="gallery-badge">Cut & Fill</div>
+          </div>
+          <div class="gallery-content">
+            <h3>คำนวณปริมาตรดินตัดและดินถม</h3>
+            <p>สำรวจพื้นที่และประเมินปริมาณงานดินสำหรับโครงการก่อสร้างขนาดใหญ่</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="pile">
+          <div class="gallery-img-box">
+           <img src="work5.jpg" alt="ทีมสำรวจ GPS RTK">
+            <div class="gallery-badge">Pile Check</div>
+          </div>
+          <div class="gallery-content">
+            <h3>ตรวจสอบตำแหน่งเสาเข็มอาคาร</h3>
+            <p>ตรวจสอบค่าพิกัดและการเยื้องศูนย์ของเสาเข็มหลังการติดตั้ง</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="land">
+          <div class="gallery-img-box">
+            <img src="work6.jpg" alt="ทีมสำรวจ GPS RTK">
+            <div class="gallery-badge">Total Station</div>
+          </div>
+          <div class="gallery-content">
+            <h3>งานวางผังและตั้งกล้องสำรวจ</h3>
+            <p>วางแนวแกนอาคาร (Grid Line) และระดับโครงสร้างพื้นฐาน</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. บริการของเรา (Services) -->
+  <div id="page-services" class="page-section">
+    <section class="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">SURVEY SERVICES</div>
+          <h2>บริการงานสำรวจวิศวกรรมครบวงจร</h2>
+          <p>ให้บริการงานสำรวจวิศวกรรมสำหรับโครงการก่อสร้าง โรงงาน คลังสินค้า อาคาร และงานพัฒนาอสังหาริมทรัพย์ ตั้งแต่งานสำรวจเบื้องต้น งานควบคุมการก่อสร้าง งานตรวจสอบ ไปจนถึงงานสำรวจเพื่อส่งมอบโครงการ</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon">01</div>
+            <h3>งานสำรวจภูมิประเทศ</h3>
+            <p>สำรวจตำแหน่งสิ่งปลูกสร้าง ถนน รั้ว ระบบระบายน้ำ สาธารณูปโภค ระดับพื้นที่ และจัดทำเส้น Contour พร้อมแบบ DWG / PDF / Civil 3D</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">02</div>
+            <h3>งานสำรวจพิกัด GNSS / RTK</h3>
+            <p>กำหนดและตรวจสอบค่าพิกัด Northing, Easting และระดับ รวมถึงการเชื่อมโยงหมุดควบคุมและระบบพิกัดอ้างอิงของโครงการ</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">03</div>
+            <h3>งานวางหมุดควบคุมและหมุดระดับ</h3>
+            <p>จัดทำ Traverse Control, Benchmark (BM) และ Temporary Benchmark (TBM) สำหรับควบคุมตำแหน่งและระดับในงานก่อสร้าง</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">04</div>
+            <h3>งานสำรวจเพื่อการก่อสร้าง</h3>
+            <p>วางตำแหน่ง Grid Line, Column, Foundation, Anchor Bolt, Building Line และองค์ประกอบต่าง ๆ ตามแบบก่อสร้าง</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">05</div>
+            <h3>งานวางตำแหน่งและตรวจสอบเสาเข็ม</h3>
+            <p>วางตำแหน่งเสาเข็มก่อนก่อสร้าง และตรวจสอบค่าคลาดเคลื่อนตำแหน่งเสาเข็มหลังติดตั้ง พร้อมสรุป Offset X/Y</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">06</div>
+            <h3>งานตรวจวัดพื้นที่อาคาร (GFA)</h3>
+            <p>สำรวจและคำนวณ Gross Floor Area (GFA) พร้อม Summary Table, Drawing และ Photo Report</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">07</div>
+            <h3>งานสำรวจรายเดือนประจำโครงการ</h3>
+            <p>ให้บริการทีมสำรวจประจำโครงการแบบรายเดือน สำหรับงาน Setting Out, ตรวจสอบพิกัดและระดับ, Pile Check, As-Built, Settlement และรายงานประจำเดือน</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">08</div>
+            <h3>งานตรวจวัดการทรุดตัว</h3>
+            <p>ติดตั้งและตรวจวัด Settlement Point / Benchmark เพื่อเฝ้าระวังการทรุดตัวของอาคาร โรงงาน และโครงสร้าง</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">09</div>
+            <h3>งานตรวจวัดการเคลื่อนตัวโครงสร้าง</h3>
+            <p>ตรวจสอบการเคลื่อนตัวในแนวราบและแนวดิ่งของโครงสร้าง กำแพง หรือพื้นที่ก่อสร้าง</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">10</div>
+            <h3>งานสำรวจระดับพื้น</h3>
+            <p>ตรวจสอบระดับพื้น ความแตกต่างของระดับ และจัดทำ Floor Level Map / Contour สำหรับโรงงานและอาคาร</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">11</div>
+            <h3>งานสำรวจระบบระบายน้ำ</h3>
+            <p>สำรวจตำแหน่ง Manhole, Cover Level, Invert Level, Pipe Size, Pipe Direction และระดับระบบระบายน้ำ</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">12</div>
+            <h3>งานตรวจสอบแนวเขตที่ดิน</h3>
+            <p>ตรวจสอบตำแหน่งแนวเขตและหมุดที่ดินกับข้อมูลอ้างอิง รวมถึงการตรวจสอบด้วย GNSS RTK ตามระบบพิกัดที่กำหนด</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">13</div>
+            <h3>งานสำรวจด้วยโดรน (UAV)</h3>
+            <p>ถ่ายภาพทางอากาศเพื่อจัดทำ Orthophoto, Point Cloud, DSM, DTM, Contour และแบบจำลองพื้นที่ 3 มิติ</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">14</div>
+            <h3>งานคำนวณปริมาตรดิน</h3>
+            <p>สำรวจเพื่อคำนวณปริมาณ Cut & Fill, Stockpile Volume และเปรียบเทียบระดับ Existing กับระดับ Design</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">15</div>
+            <h3>งานสำรวจต้นไม้และพื้นที่เดิม</h3>
+            <p>สำรวจตำแหน่ง ขนาด ชนิดต้นไม้ สิ่งปลูกสร้าง และสิ่งกีดขวางในพื้นที่โครงการ</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">16</div>
+            <h3>งานสำรวจหลังการก่อสร้าง</h3>
+            <p>ตรวจสอบตำแหน่งและระดับของงานที่ก่อสร้างจริง พร้อมจัดทำ As-Built Drawing สำหรับส่งมอบโครงการ</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">17</div>
+            <h3>งานสำรวจภูมิประเทศใต้น้ำ</h3>
+            <p>ตรวจวัดระดับท้องน้ำ ความลึก และลักษณะภูมิประเทศใต้น้ำ สำหรับคลอง บ่อ อ่างเก็บน้ำ หรือพื้นที่น้ำ</p>
+          </article>
+
+          <article class="deliverables-card">
+            <h3>รูปแบบงานส่งมอบ / DELIVERABLES</h3>
+            <p>DWG, PDF, CSV, Excel, Civil 3D, ตารางพิกัด, รายงานผลสำรวจ, Photo Report, Method Statement และ Calibration Certificate ตามข้อกำหนดของแต่ละโครงการ</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 4. ขั้นตอนการทำงาน (Process) -->
+  <div id="page-process" class="page-section">
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">OUR WORKFLOW</div>
+          <h2>ขั้นตอนการทำงาน</h2>
+        </div>
+        <div class="process-grid">
+          <div class="process">
+            <span>STEP 01</span>
+            <b>รับรายละเอียดโครงการ</b>
+            <p>พูดคุยความต้องการและขอบเขตงานเบื้องต้น</p>
+          </div>
+          <div class="process">
+            <span>STEP 02</span>
+            <b>วางแผนการสำรวจ</b>
+            <p>เตรียมทีมงาน เครื่องมือ และข้อมูลที่จำเป็น</p>
+          </div>
+          <div class="process">
+            <span>STEP 03</span>
+            <b>ดำเนินงานภาคสนาม</b>
+            <p>ปฏิบัติงานตามแผนและข้อกำหนดของโครงการ</p>
+          </div>
+          <div class="process">
+            <span>STEP 04</span>
+            <b>ส่งมอบข้อมูล</b>
+            <p>ตรวจสอบและจัดส่งข้อมูลหรือรายงานตามขอบเขตงาน</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 5. ติดต่อเรา (Contact) -->
+  <div id="page-contact" class="page-section">
+    <section class="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="eyebrow">CONTACT US</div>
+          <h2>พูดคุยเกี่ยวกับโครงการของคุณ</h2>
+          <p>ติดต่อ SC Survey & Construction เพื่อสอบถามข้อมูลและรายละเอียดการให้บริการ</p>
+          
+          <div class="contact-list">
+            <div class="contact-item">
+              <span>⌖</span>
+              69/69 หมู่ที่ 3 ตำบลบางสมัคร อำเภอบางปะกง จังหวัดฉะเชิงเทรา 24180
+            </div>
+            <div class="contact-item">
+              <span>☎</span>
+              โทรศัพท์: ***-***-****
+            </div>
+            <div class="contact-item">
+              <span>✉</span>
+              อีเมล: ************@*****.***
+            </div>
+            <div class="contact-item">
+              <span>f</span>
+              Facebook: รับเหมางานสำรวจ รังวัด วางหมุดเสาเข็ม ทำแผนที่ ราคาถูก SC SURVEY
+            </div>
+            <div class="contact-item">
+              <span>🎵</span>
+              TikTok: SC SURVEY รับเหมางานสำรวจ
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-panel">
+          <h3>ส่งข้อความหาเรา</h3>
+          <p>กรอกข้อมูลรายละเอียดโครงการของคุณ ทีมงานจะติดต่อกลับโดยเร็วที่สุด</p>
+          
+          <form action="https://formspree.io/f/your_form_id" method="POST" style="display: grid; gap: 12px;">
+            <div>
+              <label style="font-size: 12px; color: var(--gray); display: block; margin-bottom: 4px;">ชื่อ-นามสกุล / ชื่อบริษัท</label>
+              <input type="text" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit;">
+            </div>
+            <div>
+              <label style="font-size: 12px; color: var(--gray); display: block; margin-bottom: 4px;">เบอร์โทรศัพท์ / อีเมลติดต่อ</label>
+              <input type="text" name="contact_info" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit;">
+            </div>
+            <div>
+              <label style="font-size: 12px; color: var(--gray); display: block; margin-bottom: 4px;">ข้อความ / รายละเอียดงานสำรวจ</label>
+              <textarea name="message" rows="4" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit;"></textarea>
+            </div>
+            <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer; margin-top: 5px;">ส่งข้อความ ↗</button>
+          </form>
+
+          <div class="note">หมายเหตุ: ข้อมูลจะถูกส่งตรงเข้าอีเมลของคุณผ่านระบบ Formspree ทันที</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <span>© <span id="year"></span> SC Survey & Construction Co., Ltd. All rights reserved.</span>
+    <span>Survey · Construction · Engineering</span>
+  </div>
+</footer>
+
+<script>
+// ฟังก์ชันสลับหน้าหลัก (Tabs)
+function switchPage(pageId) {
+  const pages = document.querySelectorAll('.page-section');
+  pages.forEach(page => page.classList.remove('active'));
+  document.getElementById('page-' + pageId).classList.add('active');
+
+  const navButtons = document.querySelectorAll('#mainNav button');
+  navButtons.forEach(btn => btn.classList.remove('active'));
+  navButtons.forEach(btn => {
+    if (btn.getAttribute('onclick').includes(pageId)) {
+      btn.classList.add('active');
+    }
+  });
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  nav.classList.remove('open');
+  menuBtn.setAttribute("aria-expanded", "false");
+  menuBtn.textContent = "☰";
+}
+
+// ฟังก์ชันกรองภาพผลงานตามหมวดหมู่ย่อย (Sub-menu Filter)
+function filterGallery(category, event) {
+  const items = document.querySelectorAll('.gallery-item');
+  items.forEach(item => {
+    if (category === 'all' || item.getAttribute('data-category') === category) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  const buttons = document.querySelectorAll('.filter-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+}
+
+// ควบคุมเมนวมือถือ
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("mainNav");
+menuBtn.addEventListener("click", () => {
+  const open = nav.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(open));
+  menuBtn.textContent = open ? "✕" : "☰";
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
